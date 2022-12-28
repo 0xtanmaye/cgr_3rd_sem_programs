@@ -9,10 +9,10 @@ void flood_fill(int x, int y, int bd_color, int fillcolor)
 	{
 		delay(10);
 		putpixel(x, y, fillcolor);
-		flood_fill(x+1, y, defaultcolor, YELLOW);
-		flood_fill(x-1, y, defaultcolor, GREEN);
-		flood_fill(x, y+1, defaultcolor, RED);
-		flood_fill(x, y-1, defaultcolor, WHITE);
+		flood_fill(x+1, y, bd_color, fillcolor);
+		flood_fill(x-1, y, bd_color, fillcolor);
+		flood_fill(x, y+1, bd_color, fillcolor);
+		flood_fill(x, y-1, bd_color, fillcolor);
 	}
 }
 
