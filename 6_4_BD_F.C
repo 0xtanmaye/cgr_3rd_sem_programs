@@ -5,7 +5,7 @@
 
 void boundary_fill(int x, int y, int bd_color, int fillcolor)
 {
-	if(getpixel(x, y)!=bd_color && getpixel(x, y)!=fl_color)
+	if(getpixel(x, y)!=bd_color && getpixel(x, y)!=fillcolor)
 	{
 		delay(10);
 		putpixel(x, y, fillcolor);
