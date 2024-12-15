@@ -5,14 +5,14 @@
 
 void draw_circle(int xc, int yc, int x, int y)
 {
-	putpixel(xc+x, yc+y, RED);    //q1
-	putpixel(xc+y, yc+x, RED);    //q2
-	putpixel(xc-y, yc+x, GREEN);    //q3
-	putpixel(xc-x, yc+y, GREEN);    //q4
-	putpixel(xc-x, yc-y, BLUE);    //q5
-	putpixel(xc-y, yc-x, BLUE);    //q6
-	putpixel(xc+y, yc-x, WHITE);    //q7
-	putpixel(xc+x, yc-y, WHITE);    //q8
+	putpixel(xc+x, yc+y, RED);
+	putpixel(xc+y, yc+x, RED);
+	putpixel(xc-y, yc+x, GREEN);
+	putpixel(xc-x, yc+y, GREEN);
+	putpixel(xc-x, yc-y, BLUE);
+	putpixel(xc-y, yc-x, BLUE);
+	putpixel(xc+y, yc-x, WHITE);
+	putpixel(xc+x, yc-y, WHITE);
 }
 
 void bresenhams_circle(int x_cent, int y_cent, int rad)
@@ -23,21 +23,19 @@ void bresenhams_circle(int x_cent, int y_cent, int rad)
 	ny=rad;
 	dp=3-2*rad;
 
-	draw_circle(x_cent, y_cent, nx, ny);
-
 	while(nx<=ny)
 	{
-		nx++;
+		draw_circle(x_cent, y_cent, nx, ny);
 		if(dp<0)
 		{
 			dp=dp+(4*nx)+6;
 		}
 		else
 		{
-			ny--;
 			dp=dp+4*(nx-ny)+10;
+			ny--;
 		}
-		draw_circle(x_cent, y_cent, nx, ny);
+		nx++;
 		delay(40);
 	}
 }
